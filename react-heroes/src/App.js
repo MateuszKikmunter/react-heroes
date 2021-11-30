@@ -6,10 +6,15 @@ import Navbar from './UI/navbar/Navbar';
 
 function App() {
 	return (
-		<div>
-			<Navbar></Navbar>
-			<Sidebar></Sidebar>
-		</div>
+		<>
+			<div className="page-wrapper with-sidebar with-navbar">
+				<Navbar></Navbar>
+				<Sidebar></Sidebar>
+				<div className="content-wrapper">
+					{/* {content goes here} */}
+				</div>
+			</div>
+		</>
 	);
 }
 
