@@ -1,30 +1,55 @@
-import React, { useEffect } from "react";
-import halfmoon from 'halfmoon';
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from 'react';
+import halfmoon, { readCookie } from 'halfmoon';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSun } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import logo from '../../logo.svg';
 
 const Navbar = () => {
-    useEffect(() => halfmoon.onDOMContentLoaded(),
-        [halfmoon]);
+    const [themeIcon, setThemeIcon] = useState(faSun);
 
-    const handleButtonClck = () => {
-        halfmoon.toggleSidebar();
+    useEffect(() => halfmoon.onDOMContentLoaded(), [halfmoon]);
+
+    useEffect(() => {
+        const cookieValue = readCookie('halfmoon_preferredMode');
+        if (cookieValue === 'dark-mode') {
+            setThemeIcon(faSun);
+            halfmoon.toggleDarkMode();
+        } else {
+            setThemeIcon(faMoon);
+        }
+    }, [halfmoon]);
+
+    const toggleSidebar = () => halfmoon.toggleSidebar();
+    const toggleDarkMode = () => {
+        themeIcon === faSun ? setThemeIcon(faMoon) : setThemeIcon(faSun);
+        halfmoon.toggleDarkMode();
     };
 
     return (
         <nav className="navbar">
             <div className="navbar-content">
-                <button className="btn btn-action" type="button" onClick={handleButtonClck}>
+                <button
+                    className="btn btn-action"
+                    type="button"
+                    onClick={toggleSidebar}
+                >
                     <FontAwesomeIcon icon={faBars} />
-                    <span className="sr-only">Toggle sidebar</span>
                 </button>
             </div>
-            <a href="/" className="navbar-brand navbar-brand-link">
+            <a href="/" className="navbar-brand">
                 <img src={logo} alt="ReactJS logo" />
                 React-Heroes
             </a>
+            <button
+                className="btn btn-action ml-auto"
+                type="button"
+                onClick={toggleDarkMode}
+            >
+                <FontAwesomeIcon icon={themeIcon} />
+            </button>
         </nav>
     );
 };

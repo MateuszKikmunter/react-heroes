@@ -1,7 +1,7 @@
 import React from 'react';
-import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCode } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Sidebar = () => {
 	return (
@@ -15,7 +15,10 @@ const Sidebar = () => {
 					</span>
 					About
 				</a>
-				<a href="https://github.com/MateuszKikmunter/react-heroes/tree/main/react-heroes" className="sidebar-link sidebar-link-with-icon">
+				<a
+					href="https://github.com/MateuszKikmunter/react-heroes/tree/main/react-heroes"
+					className="sidebar-link sidebar-link-with-icon"
+				>
 					<span className="sidebar-icon bg-success text-dark rounded-circle">
 						<FontAwesomeIcon icon={faCode} />
 					</span>
