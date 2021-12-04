@@ -1,0 +1,13 @@
+@media screen and (max-width: 1024px) {
+	div.card {
+		width: auto !important;
+	}
+}
+
+.delete-btn-icon {
+	color: red;
+}
+
+.edit-btn-icon {
+	color: orange;
+}

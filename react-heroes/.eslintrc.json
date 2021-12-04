@@ -17,6 +17,7 @@
 	"rules": {
 		"curly": ["error", "all"],
 		"object-curly-spacing": ["error", "always"],
-		"semi": ["error", "always"]
+		"semi": ["error", "always"],
+		"react/prop-types": "off"
 	}
 }
