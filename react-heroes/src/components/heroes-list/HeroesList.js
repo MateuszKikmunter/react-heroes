@@ -1,12 +1,18 @@
 import React from 'react';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { nanoid } from 'nanoid';
 
-import HeroCard from '../HeroCard/HeroCard';
+import HeroCard from '../hero-card/HeroCard';
+import './HeroesList.css';
 
 const HeroesList = () => {
 
-    //const [heroes, setHeroes] = useState([]);
+    const fakeHero = {
+        id: nanoid(),
+        name: 'Matt the Destroyer',
+        description: 'Necromancer with a great army of the dead'
+    };
 
     return (
         <div className="container">
@@ -16,11 +22,11 @@ const HeroesList = () => {
                         className="btn btn-sm btn-action"
                         type="button"
                     >
-                        <FontAwesomeIcon icon={faPlus} style={{ color: '#29ab43' }} />
+                        <FontAwesomeIcon icon={faPlus} className="add-hero-btn" />
                     </button>
                 </h1>
             </div>
-            <HeroCard />
+            <HeroCard hero={fakeHero} />
         </div>
     );
 };

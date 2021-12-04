@@ -3,3 +3,11 @@
 		width: auto !important;
 	}
 }
+
+.delete-btn-icon {
+	color: red;
+}
+
+.edit-btn-icon {
+	color: orange;
+}

@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import Sidebar from './UI/sidebar/Sidebar';
 import Navbar from './UI/navbar/Navbar';
-import HeroesList from './components/HeroesList/HeroesList';
+import HeroesList from './components/heroes-list/HeroesList';
 
 function App() {
 	return (
