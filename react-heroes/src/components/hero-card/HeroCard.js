@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './HeroCard.css';
 
 const HeroCard = (props) => {
+
+    //TODO: add action handlers for button
     return (
         <div className="card w-half">
             <h2 className="card-title border-bottom">🦸🏼 {props.hero.name}</h2>

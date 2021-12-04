@@ -7,6 +7,7 @@ import Navbar from './UI/navbar/Navbar';
 import HeroesList from './components/heroes-list/HeroesList';
 
 function App() {
+	//TODO: fetch heroes from the backed
 	const fakeHeroes = [
 		{
 			id: nanoid(),
