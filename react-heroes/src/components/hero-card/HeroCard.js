@@ -18,14 +18,14 @@ const HeroCard = (props) => {
             >
                 <button className="btn" type="button">
                     <FontAwesomeIcon icon={faPen} className="edit-btn-icon" />
-                    Edit
+                    {' '}Edit
                 </button>
                 <button className="btn" type="button">
                     <FontAwesomeIcon
                         icon={faTrashAlt}
                         className="delete-btn-icon"
                     />
-                    Delete
+                    {' '}Delete
                 </button>
             </div>
         </div>

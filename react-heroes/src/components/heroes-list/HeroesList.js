@@ -10,7 +10,7 @@ const HeroesList = (props) => {
         <div className="container">
             <div className="content">
                 <h1 className="content-title font-size-22">
-                    Heroes
+                    Heroes{' '}
                     <button className="btn btn-sm btn-action" type="button">
                         <FontAwesomeIcon
                             icon={faPlus}
