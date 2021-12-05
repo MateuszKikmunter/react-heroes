@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 
 import './App.css';
 import Sidebar from './UI/sidebar/Sidebar';
 import Navbar from './UI/navbar/Navbar';
 import HeroesList from './components/heroes-list/HeroesList';
 
+import { HeroService } from './services/HttpHeroService';
+
 function App() {
-	const apiURL = 'http://localhost:4000/heroes';
 	const [heroes, setHeroes] = useState([]);
 	useEffect(async () => {
-		const result = await axios.get(apiURL);
+		const result = await HeroService.getHeroes();
 		setHeroes([...result.data]);
 	}, []);
 
