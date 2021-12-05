@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const apiURL = 'http://localhost:4000/heroes';
 
-export const HeroService = {
+export const heroService = {
     getHeroes: async () => {
         return axios.get(apiURL);
     },

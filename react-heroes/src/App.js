@@ -5,12 +5,12 @@ import Sidebar from './UI/sidebar/Sidebar';
 import Navbar from './UI/navbar/Navbar';
 import HeroesList from './components/heroes-list/HeroesList';
 
-import { HeroService } from './services/HttpHeroService';
+import { heroService } from './services/HttpHeroService';
 
 function App() {
 	const [heroes, setHeroes] = useState([]);
 	useEffect(async () => {
-		const result = await HeroService.getHeroes();
+		const result = await heroService.getHeroes();
 		setHeroes([...result.data]);
 	}, []);
 
