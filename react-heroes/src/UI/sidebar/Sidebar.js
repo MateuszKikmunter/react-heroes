@@ -1,6 +1,6 @@
 import React from 'react';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
-import { faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { NavLink } from 'react-router-dom';
+import { faLightbulb, faBolt, faCode } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Sidebar = () => {
@@ -9,14 +9,22 @@ const Sidebar = () => {
 			<div className="sidebar-menu">
 				<h5 className="sidebar-title">Navigation</h5>
 				<div className="sidebar-divider"></div>
-				<a href="#" className="sidebar-link sidebar-link-with-icon">
+				<NavLink to="/" className="sidebar-link sidebar-link-with-icon">
+					<span className="sidebar-icon bg-danger text-white rounded-circle">
+						<FontAwesomeIcon icon={faBolt} />
+					</span>
+					Heroes
+				</NavLink>
+				<NavLink to="/about" className="sidebar-link sidebar-link-with-icon">
 					<span className="sidebar-icon bg-primary text-white rounded-circle">
 						<FontAwesomeIcon icon={faLightbulb} />
 					</span>
 					About
-				</a>
+				</NavLink>
 				<a
 					href="https://github.com/MateuszKikmunter/react-heroes/tree/main/react-heroes"
+					target="_blank"
+					rel="noopener noreferrer"
 					className="sidebar-link sidebar-link-with-icon"
 				>
 					<span className="sidebar-icon bg-success text-dark rounded-circle">
