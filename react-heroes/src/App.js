@@ -6,6 +6,7 @@ import Sidebar from './UI/sidebar/Sidebar';
 import Navbar from './UI/navbar/Navbar';
 import HeroesList from './heroes/heroes-list/HeroesList';
 import About from './components/about/About';
+import HeroForm from './heroes/hero-form/HeroForm';
 
 function App() {
 	return (
@@ -17,6 +18,7 @@ function App() {
 					<Suspense fallback={<div>Loading...</div>}>
 						<Routes>
 							<Route path="/" element={<HeroesList />}></Route>
+							<Route path="add-hero" element={<HeroForm />}></Route>
 							<Route path="about" element={<About />} />
 						</Routes>
 					</Suspense>

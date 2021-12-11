@@ -1,0 +1,11 @@
+.resize-vertical {
+	resize: vertical;
+}
+
+.submit-btn-icon {
+	color: green;
+}
+
+.cancel-btn-icon {
+	color: red;
+}
