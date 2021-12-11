@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { nanoid } from 'nanoid';
 
 const apiURL = 'http://localhost:4000/heroes';
 
@@ -10,7 +11,7 @@ export const heroService = {
 		return axios.get(`${apiURL}/${id}`);
 	},
 	createHero: async (hero) => {
-		return axios.post(apiURL, hero);
+		return axios.post(apiURL, { id: nanoid(), ...hero });
 	},
 	updateHero: async (hero) => {
 		return axios.put(`${apiURL}/${hero.id}`, hero);
