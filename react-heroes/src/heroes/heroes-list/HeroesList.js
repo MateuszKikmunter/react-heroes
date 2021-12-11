@@ -15,7 +15,6 @@ const HeroesList = () => {
         setHeroes([...result.data]);
     }, []);
 
-    //TODO: add hero form component for this handler
     const navigate = useNavigate();
     const handleButtonClick = () => navigate('/add-hero');
 

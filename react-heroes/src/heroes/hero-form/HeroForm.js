@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 import { faCheck, faBan } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +7,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './HeroForm.css';
 
 const HeroForm = () => {
+    const navigate = useNavigate();
+    const handleCancelButtonClick = () => navigate('/');
     return (
         <div className="card w-half">
             <form>
@@ -22,7 +25,7 @@ const HeroForm = () => {
             <button className="btn mr-5 mb-5" type="submit">
                 <FontAwesomeIcon icon={faCheck} className="submit-btn-icon" />{' '}Submit
             </button>
-            <button className="btn" type="button">
+            <button className="btn" type="button" onClick={handleCancelButtonClick}>
                 <FontAwesomeIcon icon={faBan} className="cancel-btn-icon" />{' '}Cancel
             </button>
         </div>
