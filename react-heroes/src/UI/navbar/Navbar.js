@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import halfmoon, { readCookie } from 'halfmoon';
 import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -37,10 +39,10 @@ const Navbar = () => {
 					<FontAwesomeIcon icon={faBars} />
 				</button>
 			</div>
-			<a href="/" className="navbar-brand">
+			<NavLink to="/" className="navbar-brand">
 				<img src={logo} alt="ReactJS logo" />
 				React-Heroes
-			</a>
+			</NavLink>
 			<button
 				className="btn btn-action ml-auto"
 				type="button"
