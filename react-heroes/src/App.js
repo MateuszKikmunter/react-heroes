@@ -12,11 +12,12 @@ import About from './components/about/About';
 import HeroForm from './heroes/hero-form/HeroForm';
 
 function App() {
+	const [heroes, setHeroes] = useState([]);
 	const fetchHeroes = async () => {
 		const result = await heroService.getHeroes();
 		setHeroes([...result.data]);
 	};
-	const [heroes, setHeroes] = useState([]);
+
 	useEffect(async () => {
 		await fetchHeroes();
 	}, []);
