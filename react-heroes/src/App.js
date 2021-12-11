@@ -23,6 +23,7 @@ function App() {
 
 	useEffect(() => {
 		eventBus.on('refresh-data', async () => await fetchHeroes());
+		return () => eventBus.remove('refresh-data');
 	}, []);
 
 	return (
