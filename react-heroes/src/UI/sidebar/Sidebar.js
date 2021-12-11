@@ -15,7 +15,10 @@ const Sidebar = () => {
 					</span>
 					Heroes
 				</NavLink>
-				<NavLink to="/about" className="sidebar-link sidebar-link-with-icon">
+				<NavLink
+					to="/about"
+					className="sidebar-link sidebar-link-with-icon"
+				>
 					<span className="sidebar-icon bg-primary text-white rounded-circle">
 						<FontAwesomeIcon icon={faLightbulb} />
 					</span>
