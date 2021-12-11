@@ -9,41 +9,38 @@ import HeroCard from '../hero-card/HeroCard';
 import './HeroesList.css';
 
 const HeroesList = () => {
-	const [heroes, setHeroes] = useState([]);
-	useEffect(async () => {
-		const result = await heroService.getHeroes();
-		setHeroes([...result.data]);
-	}, []);
+    const [heroes, setHeroes] = useState([]);
+    useEffect(async () => {
+        const result = await heroService.getHeroes();
+        setHeroes([...result.data]);
+    }, []);
 
-	//TODO: add hero form component for this handler
-	const navigate = useNavigate();
-	const handleButtonClick = (event) => {
-		event.preventDefault();
-		navigate('/add-hero');
-	};
+    //TODO: add hero form component for this handler
+    const navigate = useNavigate();
+    const handleButtonClick = () => navigate('/add-hero');
 
-	return (
-		<div className="container">
-			<div className="content">
-				<h1 className="content-title font-size-22">
-					Heroes{' '}
-					<button
-						className="btn btn-sm btn-action"
-						type="button"
-						onClick={handleButtonClick}
-					>
-						<FontAwesomeIcon
-							icon={faPlus}
-							className="add-hero-btn"
-						/>
-					</button>
-				</h1>
-			</div>
-			{heroes.map((hero) => (
-				<HeroCard key={hero.id} hero={hero}></HeroCard>
-			))}
-		</div>
-	);
+    return (
+        <div className="container">
+            <div className="content">
+                <h1 className="content-title font-size-22">
+                    Heroes{' '}
+                    <button
+                        className="btn btn-sm btn-action"
+                        type="button"
+                        onClick={handleButtonClick}
+                    >
+                        <FontAwesomeIcon
+                            icon={faPlus}
+                            className="add-hero-btn"
+                        />
+                    </button>
+                </h1>
+            </div>
+            {heroes.map((hero) => (
+                <HeroCard key={hero.id} hero={hero}></HeroCard>
+            ))}
+        </div>
+    );
 };
 
 export default HeroesList;
