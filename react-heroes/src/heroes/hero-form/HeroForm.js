@@ -10,7 +10,7 @@ import { heroService } from "../../services/HttpHeroService";
 import './HeroForm.css';
 
 const HeroForm = () => {
-    const [heroName, setHeroName] = useState('New Hero');
+    const [heroName, setHeroName] = useState('');
     const [heroDescription, setheroDescription] = useState();
     const navigate = useNavigate();
     const params = useParams();
@@ -20,15 +20,15 @@ const HeroForm = () => {
     useEffect(async () => {
         if (params.id) {
             const result = await heroService.getHero(params.id);
-            setHeroName(result.data.name);
-            setheroDescription(result.data.description);
+            const { name, description } = result.data;
+            setHeroName(name);
+            setheroDescription(description);
         }
     }, []);
 
     const handleCancelButtonClick = () => navigate('/');
-    const handleNameChange = (e) => {
-        setHeroName(e.target.value);
-    };
+    const handleNameChange = (e) => setHeroName(e.target.value);
+    const handleDescriptionChange = (e) => setheroDescription(e.target.value);
 
     const handleFormSubmission = async (e) => {
         e.preventDefault();
@@ -55,7 +55,7 @@ const HeroForm = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="hero-description" className="required text-muted">Description</label>
-                    <textarea className="form-control resize-vertical" value={heroDescription} id="hero-description" placeholder="Write a short description about this hero." required="required" ref={descriptionRef}></textarea>
+                    <textarea className="form-control resize-vertical" value={heroDescription} id="hero-description" placeholder="Write a short description about this hero." required="required" onChange={handleDescriptionChange} ref={descriptionRef}></textarea>
                 </div>
                 <button className="btn mr-5 mb-5" type="submit">
                     <FontAwesomeIcon icon={faCheck} className="submit-btn-icon" />{' '}Submit
