@@ -7,9 +7,10 @@ import eventBus from './services/EventBus';
 import './App.css';
 import Sidebar from './UI/sidebar/Sidebar';
 import Navbar from './UI/navbar/Navbar';
-import HeroesList from './heroes/heroes-list/HeroesList';
 import About from './components/about/About';
 import HeroForm from './heroes/hero-form/HeroForm';
+
+const HeroesList = React.lazy(() => import('./heroes/heroes-list/HeroesList'));
 
 function App() {
 	const [heroes, setHeroes] = useState([]);
