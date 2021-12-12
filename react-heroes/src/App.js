@@ -35,9 +35,18 @@ function App() {
 				<div className="content-wrapper">
 					<Suspense fallback={<div>Loading...</div>}>
 						<Routes>
-							<Route path="/" element={<HeroesList heroes={heroes} />}></Route>
-							<Route path="add-hero" element={<HeroForm />}></Route>
-							<Route path="edit-hero/:id" element={<HeroForm />}></Route>
+							<Route
+								path="/"
+								element={<HeroesList heroes={heroes} />}
+							></Route>
+							<Route
+								path="add-hero"
+								element={<HeroForm />}
+							></Route>
+							<Route
+								path="edit-hero/:id"
+								element={<HeroForm />}
+							></Route>
 							<Route path="about" element={<About />} />
 						</Routes>
 					</Suspense>

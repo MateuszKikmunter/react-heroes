@@ -15,7 +15,6 @@ const HeroCard = (props) => {
 		navigate(`/edit-hero/${props.hero.id}`);
 	};
 	const handleDeleteButtonClick = async () => {
-
 		if (confirm('Are you sure?')) {
 			await heroService.deleteHero(props.hero.id);
 			eventBus.dispatch('refresh-data');
@@ -33,11 +32,19 @@ const HeroCard = (props) => {
 				role="group"
 				aria-label="hero actions button group"
 			>
-				<button className="btn" type="button" onClick={handleEditButtonClick}>
+				<button
+					className="btn"
+					type="button"
+					onClick={handleEditButtonClick}
+				>
 					<FontAwesomeIcon icon={faPen} className="edit-btn-icon" />{' '}
 					Edit
 				</button>
-				<button className="btn" type="button" onClick={handleDeleteButtonClick}>
+				<button
+					className="btn"
+					type="button"
+					onClick={handleDeleteButtonClick}
+				>
 					<FontAwesomeIcon
 						icon={faTrashAlt}
 						className="delete-btn-icon"

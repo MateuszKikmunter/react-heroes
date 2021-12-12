@@ -9,27 +9,23 @@ import { heroService } from "../../services/HttpHeroService";
 
 import './HeroForm.css';
 
-//TODO: Fix when edit mode => Warning: A component is changing an uncontrolled input to be controlled...
 const HeroForm = () => {
     const [heroName, setHeroName] = useState('New Hero');
-    const [hero, setHero] = useState();
+    const [heroDescription, setheroDescription] = useState();
     const navigate = useNavigate();
     const params = useParams();
     const nameRef = useRef();
     const descriptionRef = useRef();
 
     useEffect(async () => {
-        const heroId = params.id;
-        if (heroId) {
-            const result = await heroService.getHero(heroId);
-            console.log(result.data);
-            setHero({ ...result.data });
+        if (params.id) {
+            const result = await heroService.getHero(params.id);
             setHeroName(result.data.name);
+            setheroDescription(result.data.description);
         }
     }, []);
 
     const handleCancelButtonClick = () => navigate('/');
-
     const handleNameChange = (e) => {
         setHeroName(e.target.value);
     };
@@ -41,7 +37,10 @@ const HeroForm = () => {
             description: descriptionRef.current.value
         };
 
-        await heroService.createHero(hero);
+        params.id
+            ? await heroService.updateHero({ id: params.id, ...hero })
+            : await heroService.createHero({ ...hero });
+
         eventBus.dispatch('refresh-data');
         navigate('/');
     };
@@ -49,14 +48,14 @@ const HeroForm = () => {
     return (
         <div className="card w-half">
             <form onSubmit={handleFormSubmission} autoComplete='off'>
-                <h2 className="card-title border-bottom">🦸🏼 {hero?.name ?? heroName}</h2>
+                <h2 className="card-title border-bottom">🦸🏼 {heroName}</h2>
                 <div className="form-group">
                     <label htmlFor="hero-name" className="required text-muted">Name</label>
-                    <input type="text" value={hero?.name} className="form-control" id="hero-name" placeholder="Your hero name." required="required" onChange={handleNameChange} ref={nameRef} />
+                    <input type="text" className="form-control" id="hero-name" placeholder="Your hero name." required="required" value={heroName} onChange={handleNameChange} ref={nameRef} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="hero-description" className="required text-muted">Description</label>
-                    <textarea className="form-control resize-vertical" value={hero?.description} id="hero-description" placeholder="Write a short description about this hero." required="required" ref={descriptionRef}></textarea>
+                    <textarea className="form-control resize-vertical" value={heroDescription} id="hero-description" placeholder="Write a short description about this hero." required="required" ref={descriptionRef}></textarea>
                 </div>
                 <button className="btn mr-5 mb-5" type="submit">
                     <FontAwesomeIcon icon={faCheck} className="submit-btn-icon" />{' '}Submit
