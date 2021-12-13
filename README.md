@@ -20,7 +20,7 @@ Along my React journey I am planning to extend this application also with such t
 
 <ul>
   <li>run <code>yarn install</code> or <code>npm install</code> in the root of the project</li>
-  <li>to run frontend app execute <code> yarn start</code> or </code>npm start</code></li>
+  <li>to run frontend app execute <code> yarn start</code> or <code>npm start</code></li>
   <li>to start JSON server as the backend <code> yarn start:server</code> or <code> npm run start:server</code></li>
 </ul>
 
