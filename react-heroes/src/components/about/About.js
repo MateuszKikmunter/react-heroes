@@ -38,7 +38,7 @@ const About = () => {
 				</h2>
 				<p>
 					Along my React journey I am planning to extend this
-					application with such things as:
+					application also with such things as:
 				</p>
 				<ul>
 					<li>unit and integration tests</li>
@@ -57,6 +57,15 @@ const About = () => {
 							rel="noopener noreferrer"
 						>
 							React
+						</a>
+					</li>
+					<li>
+						<a
+							href="https://github.com/axios/axios"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Axios
 						</a>
 					</li>
 					<li>
