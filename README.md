@@ -25,13 +25,15 @@ Along my React journey I am planning to extend this application also with such t
 </ul>
 
 ## 💻 Tech stack
-
 <ul>
     <li>
         <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React</a>
     </li>
     <li>
     	<a href="https://github.com/axios/axios" target="_blank" rel="noopener noreferrer">Axios</a>
+    </li>
+    <li>
+    	<a href="https://github.com/ai/nanoid" target="_blank" rel="noopener noreferrer">Nanoid</a>
     </li>
     <li>
     	<a href="https://github.com/typicode/json-server" target="_blank" rel="noopener noreferrer">JSON server</a>
