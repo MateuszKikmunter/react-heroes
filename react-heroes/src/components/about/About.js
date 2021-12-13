@@ -70,6 +70,15 @@ const About = () => {
 					</li>
 					<li>
 						<a
+							href="https://github.com/ai/nanoid"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Nanoid
+						</a>
+					</li>
+					<li>
+						<a
 							href="https://github.com/typicode/json-server"
 							target="_blank"
 							rel="noopener noreferrer"
