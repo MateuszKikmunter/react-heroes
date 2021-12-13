@@ -38,7 +38,7 @@ const About = () => {
 				</h2>
 				<p>
 					Along my React journey I am planning to extend this
-					application with such things as:
+					application also with such things as:
 				</p>
 				<ul>
 					<li>unit and integration tests</li>
