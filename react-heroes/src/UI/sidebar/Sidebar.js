@@ -25,7 +25,7 @@ const Sidebar = () => {
 					About
 				</NavLink>
 				<a
-					href="https://github.com/MateuszKikmunter/react-heroes/tree/main/react-heroes"
+					href="https://github.com/MateuszKikmunter/react-heroes"
 					target="_blank"
 					rel="noopener noreferrer"
 					className="sidebar-link sidebar-link-with-icon"
