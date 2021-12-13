@@ -61,6 +61,15 @@ const About = () => {
 					</li>
 					<li>
 						<a
+							href="https://github.com/axios/axios"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Axios
+						</a>
+					</li>
+					<li>
+						<a
 							href="https://github.com/typicode/json-server"
 							target="_blank"
 							rel="noopener noreferrer"
