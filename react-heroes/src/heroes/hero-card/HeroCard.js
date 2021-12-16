@@ -24,7 +24,7 @@ const HeroCard = (props) => {
 	return (
 		<div className="card w-half">
 			<h2 className="card-title border-bottom">🦸🏼 {props.hero.name}</h2>
-			<div className="text-muted">
+			<div className="text-muted break-word">
 				<p>{props.hero.description}</p>
 			</div>
 			<div

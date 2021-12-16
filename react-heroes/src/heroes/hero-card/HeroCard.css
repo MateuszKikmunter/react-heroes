@@ -11,3 +11,7 @@
 .edit-btn-icon {
 	color: orange;
 }
+
+.break-word {
+	word-break: break-word;
+}
